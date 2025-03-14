@@ -76,12 +76,12 @@ h2 {
 .background-image {
     position: fixed; 
     top: 50px; /* Move the background down */
-    left: 0;
+    left: 100px;
     width: 100vw; 
     height: calc(100vh - 20px); /* Reduce height to avoid overflow */
     background-image: url('s15.jpeg');
     background-size: cover; 
-    background-position: center -80px; 
+    background-position: center -60px; 
     background-repeat: no-repeat;
     opacity: 0.2;
     z-index: -1; /* Ensure it's behind other content */
