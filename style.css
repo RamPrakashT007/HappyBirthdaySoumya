@@ -1,0 +1,164 @@
+/* Global Styles */
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scroll initially */
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes colorChange {
+    0%, 100% { color: red; }
+    20% { color: blue; }
+    40% { color: yellow; }
+    60% { color: green; }
+    80% { color: purple; }
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    animation: colorChange 2s infinite alternate;
+}
+
+.lowered-text {
+    line-height: 3.5;
+}
+
+h2 {
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.side-space {
+    margin-left: 30px;
+    color: black;
+    line-height: 2;
+}
+
+.right-space {
+    margin-right: 50px;
+    color: red;
+    line-height: 2;
+}
+
+.image-container {
+    margin-left: 30px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.image-right {
+    margin-right: 50px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.image-container img {
+    transition: transform 0.5s ease;
+}
+
+.image {
+    margin-right: 20px;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+/* Background Image */
+.background-image {
+    position: fixed; 
+    top: 50px; /* Move the background down */
+    left: 0;
+    width: 100vw; 
+    height: calc(100vh - 20px); /* Reduce height to avoid overflow */
+    background-image: url('s15.jpeg');
+    background-size: cover; 
+    background-position: center -80px; 
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+.container {
+    position:absolute;
+    overflow-y: auto;
+    height: 100vh;
+  }
+
+/* Animated Text */
+.transition-text {
+    position: absolute;
+    left: -100px;
+    font-size: 24px;
+    animation: colorChange 1s infinite, slideRight 10s linear infinite;
+}
+
+@keyframes slideRight {
+    0% { left: -100px; }
+    100% { left: calc(100% + 100px); }
+}
+
+/* Balloon Animation */
+#balloon-container {
+    height: 1100vh;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: absolute; /* Keep balloons fixed to the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; 
+}
+
+.balloon {
+  
+    height: 125px;
+    width: 105px;
+    border-radius: 75% 75% 70% 70%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    animation: float 10s ease-in infinite;
+    z-index: 10; /* Ensure each balloon stays on top */
+}
+
+.balloon:before {
+    content: "";
+    height: 75px;
+    width: 1px;
+    background-color: #FDFD96;
+    display: block;
+    position: relative;
+    top: 125px;
+    left: 0;
+    margin: auto;
+}
+
+
+@keyframes float {
+    from {
+        transform: translateY(100vh);
+        opacity: 1;
+        position: relative;
+    }
+    to {
+        transform: translateY(-300vh);
+        opacity: 0;
+        position: relative;
+    }
+}
+
+/* Additional Typing Animation */
+#animated-text, #line1, #line2 {
+    font-size: 24px;
+}

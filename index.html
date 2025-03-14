@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Name</title>
+    <link rel="stylesheet" href="style1.css"> <!-- Link to your CSS file -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+   
+</head>
+
+<body>
+    <div class="intro">
+</div>
+    <div class="name-container">
+        <h1 id="header-title">Happy Birthday to You</h1>
+        <h1>Enter Your Name</h1>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="checkName()">Submit</button>
+        <p id="error-message" style="color: red;"></p>
+    </div>
+
+    <div class="container">
+        <div class="background-image"></div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="background-music" loop>
+        <source src="Bday song.mp3" type="audio/mpeg"> <!-- Provide the path to your audio file -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        const end = Date.now() + 15 * 1000;
+
+// go Buckeyes!
+const colors = ["#bb0000", "#ffffff"];
+
+(function frame() {
+  confetti({
+    particleCount: 2,
+    angle: 60,
+    spread: 55,
+    origin: { x: 0 },
+    colors: colors,
+  });
+
+  confetti({
+    particleCount: 2,
+    angle: 120,
+    spread: 55,
+    origin: { x: 1 },
+    colors: colors,
+  });
+
+  if (Date.now() < end) {
+    requestAnimationFrame(frame);
+  }
+})();
+        function checkName() {
+            const inputName = document.getElementById("nameInput").value.trim();
+            const correctName = "soumya"; // Set the correct name here
+            
+            if (inputName === correctName) {
+                // Play background music
+                const audio = document.getElementById("background-music");
+                audio.play();
+                
+                // Redirect to the birthday page after a delay to allow music to start
+                setTimeout(function() {
+                    window.location.href = "Birthday.html"; // Replace with the actual birthday page URL
+                }, 1000); // 1 second delay before redirecting
+            } else {
+                document.getElementById("error-message").textContent = "Incorrect name! Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    margin: 0;
+}
+
+#header-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 20px 0;
+    font-size: 36px;
+    color: black;
+}
+
+.name-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#error-message {
+    font-size: 14px;
+}
+.background-image {
+    position: fixed; 
+    top: 50px; /* Move the background down */
+    left: 0;
+    width: 100vw; 
+    height: calc(100vh - 20px); /* Reduce height to avoid overflow */
+    background-image: url('birthday background.jpg');
+    background-size: cover; 
+    background-position: center -80px; 
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+.container {
+    position:absolute;
+    overflow-y: auto;
+    height: 100vh;
+  }
